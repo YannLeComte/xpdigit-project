@@ -1,0 +1,30 @@
+<div class="station-list">
+  <table>
+    <thead>
+    <tr>
+      <th>Index</th>
+      <th>Station(ID)</th>
+      <th>Nom</th>
+      <th>Coordonnées</th>
+      <th>Etat</th>
+      <th>Emplacements actuels</th>
+      <th>Emplacements disponibles</th>
+      <th>Vélos disponibles</th>
+      <th>Dernière mise à jour</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let station of stationList; let i = index;">
+      <td>{{i}}</td>
+      <td>{{station.idstation}}</td>
+      <td>{{station.nom}}</td>
+      <td>{{station.coordonnees[0]}}, {{station.coordonnees[1]}}</td>
+      <td>{{station.etat}}</td>
+      <td>{{station.nombreemplacementsactuels}}</td>
+      <td>{{station.nombreemplacementsdisponibles}}</td>
+      <td>{{station.nombrevelosdisponibles}}</td>
+      <td>{{station.lastupdate}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
