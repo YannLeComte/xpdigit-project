@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {StationInterface} from "../../dataInterfaces/Station";
+import {StationInterface} from '../../dataInterfaces/Station';
 
 @Component({
   selector: 'app-station-map',
@@ -8,9 +8,9 @@ import {StationInterface} from "../../dataInterfaces/Station";
 })
 export class StationMapComponent implements OnInit {
   @Input() stationList: StationInterface[];
+
   constructor() { }
 
   ngOnInit() {
   }
-
 }
