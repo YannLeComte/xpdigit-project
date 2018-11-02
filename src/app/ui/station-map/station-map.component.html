@@ -1,5 +1,18 @@
-<div class="station">
-  <agm-map [latitude]="stationList[0].coordonnees[0]" [longitude]="stationList[0].coordonnees[1]">
-    <agm-marker *ngFor="let station of stationList; let i = index;" [latitude]="station.coordonnees[0]" [longitude]="station.coordonnees[1]"></agm-marker>
+<div class="station" *ngIf="stationList[0]">
+  <agm-map [zoom]="12" [latitude]="stationList[0].coordonnees[0]" [longitude]="stationList[0].coordonnees[1]">
+    <agm-marker *ngFor="let station of stationList; let i = index;" [latitude]="station.coordonnees[0]" [longitude]="station.coordonnees[1]">
+      <agm-info-window>
+        <div class="info-title">
+          <p>{{station.nom}}</p>
+        </div>
+        <div class="info-body">
+          <p>{{station.etat}}</p>
+          <p>Emplacements actuels: {{station.nombreemplacementsactuels}}</p>
+          <p>Emplacements disponible: {{station.nombreemplacementsdisponibles}}</p>
+          <p>Véloss disponible: {{station.nombrevelosdisponibles}}</p>
+        </div>
+
+      </agm-info-window>
+    </agm-marker>
   </agm-map>
 </div>

@@ -8,6 +8,19 @@ import {StationInterface} from '../../dataInterfaces/Station';
 })
 export class StationListComponent implements OnInit {
   @Input() stationList: StationInterface[];
+
+  displayedColumns: string[] = [
+    'index',
+    'idstation',
+    'nom',
+    'coordonnees',
+    'etat',
+    'nombreemplacementsactuels',
+    'nombreemplacementsdisponibles',
+    'nombrevelosdisponibles',
+    'lastupdate'
+  ];
+
   ngOnInit() {
   }
 
