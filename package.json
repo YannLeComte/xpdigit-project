@@ -27,6 +27,7 @@
     "leaflet-routing-machine": "^3.2.12",
     "mangol": "^6.1.14",
     "ngx-openlayers": "^0.8.22",
+    "ngx-perfect-scrollbar": "^7.0.0",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
   },

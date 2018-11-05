@@ -12,7 +12,7 @@ export class StationsService {
 
   getStations(): Promise<Object> {
     let stationsList = [];
-    return this.http.get('https://data.rennesmetropole.fr/api/records/1.0/search/?dataset=etat-des-stations-le-velo-star-en-temps-reel&facet=nom&facet=etat&facet=nombreemplacementsactuels&facet=nombreemplacementsdisponibles&facet=nombrevelosdisponibles')
+    return this.http.get('https://data.rennesmetropole.fr/api/records/1.0/search/?rows=55&dataset=etat-des-stations-le-velo-star-en-temps-reel&facet=nom&facet=etat&facet=nombreemplacementsactuels&facet=nombreemplacementsdisponibles&facet=nombrevelosdisponibles')
       .toPromise()
       .then((data: any) => {
         return this.jsonToStationInerface(data);

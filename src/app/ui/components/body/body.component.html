@@ -1,0 +1,4 @@
+<div class="body">
+  <app-station-list *ngIf="stationList && stationList.length > 0" [stationList]="stationList" (selectedStation)="onSelectedStation($event)"></app-station-list>
+  <app-station-map *ngIf="stationList && stationList.length > 0" [stationList]="stationList" [selectedStation]="selectedStation"></app-station-map>
+</div>
