@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {StationInterface} from '../../../../dataInterfaces/Station';
 
 @Component({
@@ -9,20 +9,20 @@ import {StationInterface} from '../../../../dataInterfaces/Station';
 export class StationMapComponent implements OnChanges {
   @Input() stationList: StationInterface[];
   @Input() selectedStation: StationInterface;
-  openedWindow: number = 0;
+  openedWindow: number;
 
-  constructor() { }
+  constructor() {
+    this.openedWindow = 0;
+  }
 
+  /* When the selected station changes, open the information window in the map */
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.selectedStation.currentValue) {
+    if (changes.selectedStation.currentValue !== 0) {
       this.openedWindow = changes.selectedStation.currentValue.idstation;
     }
   }
 
-  isInfoWindowOpen(id) {
-    return this.openedWindow === id;
-  }
-
+  /* Update openedWindow, when a marker is selected*/
   windowOpen(id) {
     this.openedWindow = id;
   }

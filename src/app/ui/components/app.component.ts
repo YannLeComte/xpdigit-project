@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'xpdigit-project';
+  title = 'XP Digit: Exercise technique';
 
   constructor() {
   }

@@ -1,7 +1,7 @@
-<div class="station" *ngIf="stationList[0]">
-  <agm-map [zoom]="12" [latitude]="stationList[0].coordonnees[0]" [longitude]="stationList[0].coordonnees[1]">
+<div class="station">
+  <agm-map [zoom]="13" [latitude]="stationList[0].coordonnees[0]" [longitude]="stationList[0].coordonnees[1]">
     <agm-marker *ngFor="let station of stationList; let i = index;" [latitude]="station.coordonnees[0]" [longitude]="station.coordonnees[1]" (markerClick)="windowOpen(station.idstation)">
-      <agm-info-window [isOpen]="isInfoWindowOpen(station.idstation)">
+      <agm-info-window [isOpen]="openedWindow === station.idstation">
         <div class="info-title">
           <p>{{station.nom}}</p>
         </div>

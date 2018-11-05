@@ -1,4 +1,5 @@
-<div class="body">
-  <app-station-list *ngIf="stationList && stationList.length > 0" [stationList]="stationList" (selectedStation)="onSelectedStation($event)"></app-station-list>
-  <app-station-map *ngIf="stationList && stationList.length > 0" [stationList]="stationList" [selectedStation]="selectedStation"></app-station-map>
+<mat-spinner *ngIf="!isDataLoaded"></mat-spinner>
+<div class="body" *ngIf="isDataLoaded && stationList.length > 0">
+  <app-station-list [stationList]="stationList" (selectedStation)="onSelectedStation($event)"></app-station-list>
+  <app-station-map [stationList]="stationList" [selectedStation]="selectedStation"></app-station-map>
 </div>

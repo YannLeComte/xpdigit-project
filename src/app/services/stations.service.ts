@@ -10,15 +10,27 @@ export class StationsService {
   constructor(private http: HttpClient) {
   }
 
-  getStations(): Promise<Object> {
+  /* Return the number of stations */
+  getNumberOfStations(): Promise<Object> {
     let stationsList = [];
-    return this.http.get('https://data.rennesmetropole.fr/api/records/1.0/search/?rows=55&dataset=etat-des-stations-le-velo-star-en-temps-reel&facet=nom&facet=etat&facet=nombreemplacementsactuels&facet=nombreemplacementsdisponibles&facet=nombrevelosdisponibles')
+    return this.http.get('https://data.rennesmetropole.fr/api/records/1.0/search/?dataset=etat-des-stations-le-velo-star-en-temps-reel&rows=0')
+      .toPromise()
+      .then((data: any) => {
+        return data.nhits;
+      });
+  }
+
+  /* Return a list of stations, given number of element */
+  getStations(numberOfRows): Promise<Object> {
+    let stationsList = [];
+    return this.http.get('https://data.rennesmetropole.fr/api/records/1.0/search/?dataset=etat-des-stations-le-velo-star-en-temps-reel&rows=' + numberOfRows + '&facet=nom&facet=etat&facet=nombreemplacementsactuels&facet=nombreemplacementsdisponibles&facet=nombrevelosdisponibles')
       .toPromise()
       .then((data: any) => {
         return this.jsonToStationInerface(data);
       });
   }
 
+  /* Convert a JSON to a list of StationInterface */
   jsonToStationInerface(json): StationInterface[] {
     let stationsList = [];
     if (json.records) {

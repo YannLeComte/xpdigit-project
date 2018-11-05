@@ -1,14 +1,15 @@
-table {
+.station-list {
+  height: calc((100vh - 80px)/2);
+  overflow: auto;
+}
+
+.station-list table {
+  min-width: 900px;
+  box-shadow: none;
   width: 100%;
 }
 
-.table-container {
-  height: calc((100vh - 80px)/2);
-  overflow: auto;
-  box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
-}
-
-.table-container table {
-  min-width: 900px;
-  box-shadow: none;
+.station-list table .mat-row:hover {
+  cursor: pointer;
+  background-color: #e6e6e68f;
 }

@@ -1,0 +1,11 @@
+.header img {
+  height: 50px;
+}
+.header span {
+  font-size: 20px;
+  font-weight: 300;
+  color: white;
+}
+.mat-toolbar {
+  background-color: rgba(34,34,34,1);
+}
